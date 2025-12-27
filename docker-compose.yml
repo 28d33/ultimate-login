@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  dynamodb-local:
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    image: "amazon/dynamodb-local:latest"
+    container_name: dynamodb-local
+    ports:
+      - "8001:8000"
+    volumes:
+      - "./dynamodb_data:/home/dynamodblocal/data"
+    working_dir: /home/dynamodblocal
+    networks:
+      - secure-net
+
+  backend:
+    build: ./backend
+    container_name: secure-backend
+    ports:
+      - "3001:3000"
+    environment:
+      - PORT=3000
+      - DYNAMO_ENDPOINT=http://dynamodb-local:8000
+      - JWT_SECRET=super_secure_random_secret_change_me_in_prod
+      - NODE_ENV=development
+    depends_on:
+      - dynamodb-local
+    networks:
+      - secure-net
+    volumes:
+      - ./frontend:/app/frontend
+
+networks:
+  secure-net:
+    driver: bridge

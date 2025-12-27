@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Secure System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+        <p class="subtitle">Join the secure system</p>
+        <form id="registerForm">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label>Password (Min 12 chars)</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <p id="message" style="text-align:center; margin-top:10px;"></p>
+	<div class="link-text">
+    	already have an account? <a href="/">Login</a> 
+	</div>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>

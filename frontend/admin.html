@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 700px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h2>Admin Panel</h2>
+            <button id="logoutBtn" class="btn btn-outline" style="width:auto; margin:0;">Logout</button>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <h3>User Management</h3>
+            <p class="subtitle">Manage users in the local database</p>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Failed Attempts</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+        <input type="hidden" id="csrfToken">
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
