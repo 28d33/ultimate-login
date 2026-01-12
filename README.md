@@ -83,7 +83,7 @@ cd ../..
 docker-compose up --build
 ```
 
-*Wait until you see `Secure Server running on https://localhost:3000` in the terminal.*
+*Wait until you see `Secure Server running on https://localhost:3001` in the terminal.*
 
 ### 4. Access the App
 
